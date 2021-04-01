@@ -1,0 +1,13 @@
+{
+    "name": "isanasan/php-tddbook",
+    "description": "study tdd at php",
+    "authors": [
+        {
+            "name": "isanasan",
+            "email": "yfcgpsebp@gmail.com"
+        }
+    ],
+    "require-dev": {
+        "phpunit/phpunit": "^9.5"
+    }
+}
