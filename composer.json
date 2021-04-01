@@ -9,5 +9,18 @@
     ],
     "require-dev": {
         "phpunit/phpunit": "^9.5"
-    }
+    },
+    "autoload": {
+        "psr-4": {
+            "isanasan\\php-tddbook\\": "src"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "isanasan\\php-tddbook\\": "tests"
+        }
+    },
+    "config": {
+        "sort-packages": true
+     }
 }
