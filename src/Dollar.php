@@ -6,9 +6,13 @@ class Dollar
 {
     public $amount;
 
-    public function __constractor(){}
+    public function __construct(int $amount)
+    {
+        $this->amount = $amount;
+    }
 
-        public function times(){
-            $this->amount = 2 * 5;
-        }
+    public function times(int $multiplier)
+    {
+        $this->amount *= $multiplier;
+    }
 }
