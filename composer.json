@@ -12,12 +12,12 @@
     },
     "autoload": {
         "psr-4": {
-            "isanasan\\php-tddbook\\": "src"
+            "isanasan\\phptddbook\\": "src"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "isanasan\\php-tddbook\\": "tests"
+            "isanasan\\phptddbook\\": "tests"
         }
     },
     "config": {
