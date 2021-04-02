@@ -7,9 +7,6 @@
             "email": "yfcgpsebp@gmail.com"
         }
     ],
-    "require-dev": {
-        "phpunit/phpunit": "^9.5"
-    },
     "autoload": {
         "psr-4": {
             "isanasan\\phptddbook\\": "src"
@@ -21,6 +18,9 @@
         }
     },
     "config": {
-        "sort-packages": true
+        "sort-packages": true,
+        "platform": {
+            "php": "7.4.0"
+        }
      }
 }
