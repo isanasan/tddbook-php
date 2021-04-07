@@ -7,6 +7,7 @@ abstract class Money
     protected $amount;
 
     abstract function times(int $multiplier): Money;
+    abstract function currency(): String;
 
     public function equals(Money $object): bool
     {
