@@ -5,9 +5,14 @@ namespace isanasan\phptddbook;
 abstract class Money
 {
     protected $amount;
+    protected $currency;
 
     abstract function times(int $multiplier): Money;
-    abstract function currency(): String;
+
+    public function currency()
+    {
+        return $this->currency;
+    }
 
     public function equals(Money $object): bool
     {
