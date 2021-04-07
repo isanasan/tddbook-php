@@ -2,9 +2,11 @@
 
 namespace isanasan\phptddbook;
 
-class Money
+abstract class Money
 {
     protected $amount;
+
+    abstract function times(int $multiplier);
 
     public function equals(Money $object): bool
     {
