@@ -6,7 +6,7 @@ abstract class Money
 {
     protected $amount;
 
-    abstract function times(int $multiplier);
+    abstract function times(int $multiplier):Money;
 
     public function equals(Money $object): bool
     {
@@ -14,7 +14,7 @@ abstract class Money
                 && static::class === get_class($object);
     }
 
-    public static function dollar(int $amount):Dollar
+    public static function dollar(int $amount):Money
     {
         return (new Dollar($amount));
     }
