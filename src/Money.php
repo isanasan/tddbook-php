@@ -2,12 +2,15 @@
 
 namespace isanasan\phptddbook;
 
-abstract class Money
+class Money
 {
     protected $amount;
     protected $currency;
 
-    abstract function times(int $multiplier): Money;
+    public function times(int $multiplier)
+    {
+        return null;
+    }
 
     public function __construct(int $amount,string $currency)
     {
