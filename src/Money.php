@@ -7,15 +7,15 @@ class Money
     protected $amount;
     protected $currency;
 
-    public function times(int $multiplier)
-    {
-        return new Money($this->amount * $multiplier,$this->currency);
-    }
-
-    public function __construct(int $amount,string $currency)
+    public function __construct(int $amount, string $currency)
     {
         $this->amount = $amount;
         $this->currency = $currency;
+    }
+
+    public function times(int $multiplier)
+    {
+        return new Money($this->amount * $multiplier, $this->currency);
     }
 
     public function currency()
@@ -31,11 +31,11 @@ class Money
 
     public static function dollar(int $amount): Money
     {
-        return (new Money($amount,"USD"));
+        return (new Money($amount, "USD"));
     }
 
     public static function franc(int $amount): Money
     {
-        return (new Money($amount,"CHF"));
+        return (new Money($amount, "CHF"));
     }
 }
