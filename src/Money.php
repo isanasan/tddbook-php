@@ -2,7 +2,7 @@
 
 namespace isanasan\phptddbook;
 
-class Money
+class Money implements Expression
 {
     protected $amount;
     protected $currency;
