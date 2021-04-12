@@ -40,6 +40,5 @@ final class MoneyTest extends TestCase
         $sum = $result;
         $this->assertEquals($five,$sum->augend);
         $this->assertEquals($five,$sum->addend);
-
     }
 }
