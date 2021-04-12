@@ -4,8 +4,8 @@ namespace isanasan\phptddbook;
 
 class Money implements Expression
 {
-    protected $amount;
-    protected $currency;
+    public $amount;
+    public $currency;
 
     public function __construct(int $amount, string $currency)
     {
