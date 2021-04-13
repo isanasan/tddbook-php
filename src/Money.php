@@ -27,7 +27,6 @@ class Money implements Expression
     {
         $rate = ($this->currency ==="CHF" && $to === "USD") ? 2 : 1;
         return new Money($this->amount / $rate ,$to);
-        // return $this;
     }
 
     public function currency()
