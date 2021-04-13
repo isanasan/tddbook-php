@@ -64,4 +64,9 @@ final class MoneyTest extends TestCase
         $result = $bank->reduce(Money::Franc(2), "USD");
         $this->assertEquals(Money::dollar(1), $result);
     }
+
+    public function testIdentityRate()
+    {
+        $this->assertEquals(1,(new Bank())->rate("USD","USD"));
+    }
 }
