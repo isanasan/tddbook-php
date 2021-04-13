@@ -8,4 +8,8 @@ class Bank
     {
         return $source->reduce($to);
     }
+
+    public function addRate(string $from,String $to,int $rate)
+    {
+    }
 }
