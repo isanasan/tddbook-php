@@ -13,12 +13,14 @@ class Bank
 
     public function addRate(string $from, String $to, int $rate)
     {
-        $this->rates[] = [new Pair($from, $to) => $rate];
+        $this->rates = [
+            $rate => new Pair($from, $to)
+        ];
     }
 
     public function rate(string $from, String $to)
     {
         if ($from === $to) return 1;
-        return $this->rates[new Pair($from, $to)];
+        return array_search((new Pair($from, $to)), $this->rates);
     }
 }
