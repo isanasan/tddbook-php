@@ -13,12 +13,12 @@ class Money implements Expression
         $this->currency = $currency;
     }
 
-    public function times(int $multiplier)
+    public function times(int $multiplier):Expression
     {
         return new Money($this->amount * $multiplier, $this->currency);
     }
 
-    public function plus(Money $addend): Sum
+    public function plus(Expression $addend): Sum
     {
         return new Sum($this, $addend);
     }
