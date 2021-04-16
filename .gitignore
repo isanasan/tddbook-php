@@ -1,4 +1,4 @@
-/vendor/
+/money/vendor/
 
-composer.lock
-build/logs/clover.xml
+/money/composer.lock
+/money/build/logs/clover.xml
