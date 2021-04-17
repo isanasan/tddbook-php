@@ -1,0 +1,10 @@
+{
+    "name": "isanasan/php-tddbook",
+    "description": "study tdd at php",
+    "require": {},
+    "autoload": {
+    "psr-4": {
+            "isanasan\\phptddbook\\": "src"
+        }
+    }
+}
