@@ -1,4 +1,4 @@
 /money/vendor/
-
+/xunit/vendor/
 /money/composer.lock
 /money/build/logs/clover.xml
