@@ -6,5 +6,5 @@ require_once __DIR__ . '/../vendor/autoload.php';
 
 $test = new WasRun("testMethd");
 echo $test->wasRun . PHP_EOL;
-$test->testMethod();
+$test->run();
 echo $test->wasRun . PHP_EOL;

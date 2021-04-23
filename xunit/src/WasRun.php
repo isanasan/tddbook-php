@@ -11,6 +11,11 @@ class WasRun
         $this->wasRun = 'none';
     }
 
+    public function run()
+    {
+        $this->testMethod();
+    }
+
     public function testMethod()
     {
         $this->wasRun = 1;
