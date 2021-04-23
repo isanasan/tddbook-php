@@ -2,20 +2,15 @@
 
 namespace isanasan\phptddbook;
 
-class WasRun
+class WasRun extends TestCase
 {
     public $wasRun;
-    public $name;
 
     public function __construct($name)
     {
         $this->wasRun = 'none';
-        $this->name = $name;
-    }
 
-    public function run()
-    {
-        call_user_func([$this, $this->name]);
+        parent::__construct($name);
     }
 
     public function testMethod()
