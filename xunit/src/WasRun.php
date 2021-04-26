@@ -1,21 +1,19 @@
 <?php
 
+declare(strict_types=1);
+
 namespace isanasan\phptddbook;
+
+error_reporting(E_ALL);
 
 class WasRun extends TestCase
 {
     public $wasRun;
     public $wasSetUp;
 
-    public function __construct($name)
-    {
-        $this->wasRun = 'none';
-
-        parent::__construct($name);
-    }
-
     public function setUp()
     {
+        $this->wasRun = 'none';
         $this->wasSetUp = 1;
     }
 

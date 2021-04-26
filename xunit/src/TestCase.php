@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace isanasan\phptddbook;
 
 require_once __DIR__ . '/../vendor/autoload.php';
