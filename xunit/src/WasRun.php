@@ -8,16 +8,10 @@ class WasRun extends TestCase
 {
     public $wasRun;
     public $wasSetUp;
+    public function setUp()
 
-    public function __construct($name)
     {
         $this->wasRun = false;
-
-        parent::__construct($name);
-    }
-
-    public function setUp()
-    {
         $this->wasSetUp = true;
     }
 
