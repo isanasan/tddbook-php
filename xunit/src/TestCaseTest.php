@@ -10,22 +10,19 @@ require_once __DIR__ . '/../vendor/autoload.php';
 
 class TestCaseTest extends TestCase
 {
-    private $test;
-
-    public function setUp()
-    {
-        $this->test = new WasRun("testMethod");
-    }
     public function testRunning()
     {
-        $this->test->run();
-        assert($this->test->wasRun());
+        $test = new WasRun('testMethod');
+        assert(!$test->wasRun);
+        $test->run();
+        assert($test->wasRun);
     }
 
     public function testSetUp()
     {
-        $this->test->run();
-        assert($this->test->wasSetUp());
+        $test = new WasRun("testMethod");
+        $test->run();
+        assert($test->wasSetUp());
     }
 }
 
