@@ -4,8 +4,6 @@ declare(strict_types=1);
 
 namespace isanasan\phptddbook;
 
-error_reporting(E_ALL);
-
 require_once __DIR__ . '/../vendor/autoload.php';
 
 class TestCaseTest extends TestCase
