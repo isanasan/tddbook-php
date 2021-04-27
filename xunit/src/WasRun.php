@@ -9,14 +9,15 @@ class WasRun extends TestCase
     public $wasRun;
     public $wasSetUp;
 
-    // public function __construct($name)
-    // {
-    //     parent::__construct($name);
-    // }
+    public function __construct($name)
+    {
+        $this->wasRun = false;
+
+        parent::__construct($name);
+    }
 
     public function setUp()
     {
-        $this->wasRun = false;
         $this->wasSetUp = true;
     }
 
