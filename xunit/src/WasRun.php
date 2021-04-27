@@ -8,13 +8,13 @@ class WasRun extends TestCase
 
     public function __construct($name)
     {
-        $this->wasRun = 'none';
+        $this->wasRun = false;
 
         parent::__construct($name);
     }
 
     public function testMethod()
     {
-        $this->wasRun = 1;
+        $this->wasRun = true;
     }
 }
