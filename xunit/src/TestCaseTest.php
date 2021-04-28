@@ -24,7 +24,7 @@ class TestCaseTest extends TestCase
     public function testSetUp()
     {
         $this->test->run();
-        assert("setUp" === $this->test->log);
+        assert("setUp testMethod" === $this->test->log);
     }
 }
 

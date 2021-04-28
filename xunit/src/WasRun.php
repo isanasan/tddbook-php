@@ -13,12 +13,12 @@ class WasRun extends TestCase
     public function setUp()
     {
         $this->wasRun = false;
-        $this->wasSetUp = true;
         $this->log = "setUp";
     }
 
     public function testMethod()
     {
         $this->wasRun = true;
+        $this->log = "$this->log testMethod";
     }
 }
