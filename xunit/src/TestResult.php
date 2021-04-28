@@ -7,8 +7,20 @@ namespace isanasan\phptddbook;
 
 class TestResult
 {
+    public $runCount;
+
+    public function __construct()
+    {
+        $this->runCount = 0;
+    }
+
+    public function testStarted()
+    {
+        $this->runCount++;
+    }
+
     public function summary()
     {
-        return "1 run, 0 failed";
+        return "$this->runCount run, 0 failed";
     }
 }
