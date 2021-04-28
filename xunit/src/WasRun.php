@@ -18,4 +18,9 @@ class WasRun extends TestCase
         $this->wasRun = true;
         $this->log = "$this->log testMethod";
     }
+
+    public function tearDown()
+    {
+        $this->log = "$this->log tearDown";
+    }
 }
