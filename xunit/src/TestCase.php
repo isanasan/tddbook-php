@@ -28,5 +28,6 @@ class TestCase
         $this->setUp();
         call_user_func([$this, $this->name]);
         $this->tearDown();
+        return new TestResult();
     }
 }
