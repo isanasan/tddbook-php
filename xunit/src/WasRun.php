@@ -6,13 +6,10 @@ namespace isanasan\phptddbook;
 
 class WasRun extends TestCase
 {
-    public $wasRun;
-    public $wasSetUp;
     public $log;
 
     public function setUp()
     {
-        $this->wasRun = false;
         $this->log = "setUp";
     }
 

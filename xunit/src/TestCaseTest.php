@@ -10,23 +10,12 @@ class TestCaseTest extends TestCase
 {
     private $test;
 
-    public function setUp()
+    public function testTemplateMethod()
     {
         $this->test = new WasRun("testMethod");
-    }
-
-    public function testRunning()
-    {
-        $this->test->run();
-        assert($this->test->wasRun);
-    }
-
-    public function testSetUp()
-    {
         $this->test->run();
         assert("setUp testMethod" === $this->test->log);
     }
 }
 
-(new TestCaseTest('testRunning'))->run();
-(new TestCaseTest('testSetUp'))->run();
+(new TestCaseTest('testTemplateMethod'))->run();
