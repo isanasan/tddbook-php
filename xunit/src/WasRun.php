@@ -8,11 +8,13 @@ class WasRun extends TestCase
 {
     public $wasRun;
     public $wasSetUp;
-    public function setUp()
+    public $log;
 
+    public function setUp()
     {
         $this->wasRun = false;
         $this->wasSetUp = true;
+        $this->log = "setUp";
     }
 
     public function testMethod()
