@@ -30,8 +30,20 @@ class TestCaseTest extends TestCase
         $result = $this->test->run();
         assert("1 run, 1 failed" === $result->summary());
     }
+
+    public function testFalledResultFormatting()
+    {
+        $result = new TestResult();
+        $result->testStarted();
+        $result->testFalled();
+        assert("1 run, 1 failed" === $result->summary());
+    }
 }
+
+ini_set('assert.active', '1');
+ini_set('assert.exception', '1');
 
 (new TestCaseTest('testTemplateMethod'))->run();
 (new TestCaseTest('testResult'))->run();
 // (new TestCaseTest('testFalledResult'))->run();
+(new TestCaseTest('testFalledResultFormatting'))->run();
