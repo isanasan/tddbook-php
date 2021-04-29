@@ -43,7 +43,7 @@ class TestCaseTest extends TestCase
 ini_set('assert.active', '1');
 ini_set('assert.exception', '1');
 
-(new TestCaseTest('testTemplateMethod'))->run();
-(new TestCaseTest('testResult'))->run();
-// (new TestCaseTest('testFalledResult'))->run();
-(new TestCaseTest('testFalledResultFormatting'))->run();
+echo (new TestCaseTest('testTemplateMethod'))->run()->summary() . PHP_EOL;
+echo (new TestCaseTest('testResult'))->run()->summary() . PHP_EOL;
+echo (new TestCaseTest('testFalledResult'))->run()->summary() . PHP_EOL;
+echo (new TestCaseTest('testFalledResultFormatting'))->run()->summary() . PHP_EOL;
