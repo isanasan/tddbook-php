@@ -13,21 +13,24 @@ class TestCaseTest extends TestCase
     public function testTemplateMethod()
     {
         $this->test = new WasRun("testMethod");
-        $this->test->run();
+        $result = new TestResult();
+        $this->test->run($result);
         assert("setUp testMethod tearDown" === $this->test->log);
     }
 
     public function testResult()
     {
         $this->test = new WasRun("testMethod");
-        $result = $this->test->run();
+        $result = new TestResult();
+        $this->test->run($result);
         assert("1 run, 0 failed" === $result->summary());
     }
 
     public function testFalledResult()
     {
         $this->test = new WasRun("testBrokenMethod");
-        $result = $this->test->run();
+        $result = new TestResult();
+        $this->test->run($result);
         assert("1 run, 1 failed" === $result->summary());
     }
 
@@ -38,12 +41,27 @@ class TestCaseTest extends TestCase
         $result->testFalled();
         assert("1 run, 1 failed" === $result->summary());
     }
+
+    public function testSuite()
+    {
+        $suite = new TestSuite();
+        $suite->add(new WasRun("testMethod"));
+        $suite->add(new WasRun("testBrokenMethod"));
+        $result = new TestResult();
+        $suite->run($result);
+        assert("2 run, 1 failed" === $result->summary());
+    }
 }
 
 ini_set('assert.active', '1');
 ini_set('assert.exception', '1');
 
-echo (new TestCaseTest('testTemplateMethod'))->run()->summary() . PHP_EOL;
-echo (new TestCaseTest('testResult'))->run()->summary() . PHP_EOL;
-echo (new TestCaseTest('testFalledResult'))->run()->summary() . PHP_EOL;
-echo (new TestCaseTest('testFalledResultFormatting'))->run()->summary() . PHP_EOL;
+$suite = new TestSuite();
+$suite->add(new TestCaseTest("testTemplateMethod"));
+$suite->add(new TestCaseTest("testResult"));
+$suite->add(new TestCaseTest("testFalledResult"));
+$suite->add(new TestCaseTest("testFalledResultFormatting"));
+$suite->add(new TestCaseTest("testSuite"));
+$result = new TestResult();
+$suite->run($result);
+echo $result->summary() . PHP_EOL;
