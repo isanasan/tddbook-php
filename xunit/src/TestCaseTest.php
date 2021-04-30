@@ -9,37 +9,39 @@ require_once __DIR__ . '/../vendor/autoload.php';
 class TestCaseTest extends TestCase
 {
     private $test;
+    private $result;
+
+    public function setUp()
+    {
+        $this->result = new TestResult();
+    }
 
     public function testTemplateMethod()
     {
         $this->test = new WasRun("testMethod");
-        $result = new TestResult();
-        $this->test->run($result);
+        $this->test->run($this->result);
         assert("setUp testMethod tearDown" === $this->test->log);
     }
 
     public function testResult()
     {
         $this->test = new WasRun("testMethod");
-        $result = new TestResult();
-        $this->test->run($result);
-        assert("1 run, 0 failed" === $result->summary());
+        $this->test->run($this->result);
+        assert("1 run, 0 failed" === $this->result->summary());
     }
 
     public function testFalledResult()
     {
         $this->test = new WasRun("testBrokenMethod");
-        $result = new TestResult();
-        $this->test->run($result);
-        assert("1 run, 1 failed" === $result->summary());
+        $this->test->run($this->result);
+        assert("1 run, 1 failed" === $this->result->summary());
     }
 
     public function testFalledResultFormatting()
     {
-        $result = new TestResult();
-        $result->testStarted();
-        $result->testFalled();
-        assert("1 run, 1 failed" === $result->summary());
+        $this->result->testStarted();
+        $this->result->testFalled();
+        assert("1 run, 1 failed" === $this->result->summary());
     }
 
     public function testSuite()
@@ -47,9 +49,8 @@ class TestCaseTest extends TestCase
         $suite = new TestSuite();
         $suite->add(new WasRun("testMethod"));
         $suite->add(new WasRun("testBrokenMethod"));
-        $result = new TestResult();
-        $suite->run($result);
-        assert("2 run, 1 failed" === $result->summary());
+        $suite->run($this->result);
+        assert("2 run, 1 failed" === $this->result->summary());
     }
 }
 
